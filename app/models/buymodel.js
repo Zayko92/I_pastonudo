@@ -9,7 +9,7 @@ const buyModel = mongoose.model(
             index: true,
             unique: true},
 
-        ismaterial: Bool, //if not it's just another kind of expense
+        ismaterial: Boolean, //if not it's just another kind of expense
         prodotto: Number,
         quantita: Number,
         spesa: Number,
