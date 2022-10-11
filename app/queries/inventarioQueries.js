@@ -3,9 +3,14 @@ let buymodel = require('../models/salemodel.js')
 let drinkmodel = require('../models/drinkmodel.js')
 
 //query per aggiornare archivio materie prime
-async function addNewMaterial(id, update, options = { new: true, upsert: true }) {
-    return materiaprimamodel.findOneAndUpdate(id, update, options)
+async function addNewMaterial(idType, update, options = { new: true, upsert: true }) {
+    return materiaprimamodel.findOneAndUpdate({idType}, update, options)
 }
+
+async function countMaterials(query) {
+    return materiaprimamodel.count(query)
+}
+
 
 async function getBuys(query = {}, page = 0,limit = 500, sort = {}) {
     return buymodel.find(query).skip(page * limit).limit(limit).sort(sort);
@@ -19,4 +24,4 @@ async function addDrink(id, update, options = { new: true, upsert: true }) {
     return drinkmodel.findOneAndUpdate(id, update, options)
 }
 
-module.exports = {addNewMaterial, getBuys, addBuy, addDrink}
+module.exports = {addNewMaterial, countMaterials, getBuys, addBuy, addDrink}

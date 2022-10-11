@@ -4,7 +4,7 @@ const materiaprimaModel = mongoose.model(
     "Materials",
     new mongoose.Schema({
 
-        id: {type: Number,
+        idType: {type: Number,
             required: true,
             index: true,
             unique: true},
@@ -12,6 +12,8 @@ const materiaprimaModel = mongoose.model(
         descrizione: String,
         costo: Number,
         quantita: Number,
+        grandezza: Number,
+
 
     })
 );

@@ -10,6 +10,7 @@ mongoose.Promise = global.Promise;
 //routes
 require('./app/routes/autenticazioneRoutes.js')(app);
 require('./app/routes/usercontentsRoutes.js')(app);
+require('./app/routes/inventarioRoutes.js')(app);
 
 var corsOptions = {
     origin: "http://localhost:8081"
