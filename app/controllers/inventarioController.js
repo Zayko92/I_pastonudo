@@ -1,5 +1,4 @@
 const {addNewMaterial, countMaterials, addBuy, addDrink, getFilteredUsers} = require("../queries/inventarioQueries");
-const authConfig = require("../config/auth.config");
 
 module.exports = {
 
@@ -15,7 +14,8 @@ module.exports = {
 
         let update = {
             idType: id,
-            descrizione: req.body.descrizione,
+            tipo: req.body.tipo,
+            marca: req.body.marca,
             costo: req.body.costo,
             quantita: req.body.quantita,
             grandezza: req.body.grandezza

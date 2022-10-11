@@ -9,7 +9,8 @@ const materiaprimaModel = mongoose.model(
             index: true,
             unique: true},
 
-        descrizione: String,
+        tipo: String,
+        marca: String,
         costo: Number,
         quantita: Number,
         grandezza: Number,
