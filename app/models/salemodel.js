@@ -4,14 +4,14 @@ const saleModel = mongoose.model(
     "Sale",
     new mongoose.Schema({
 
-        timestamp: {type: String,
-                    required: true,
-                    index: true,
-                    unique: true},
-
+        id: {type: Number,
+            required: true,
+            index: true,
+            unique: true},
         operatore: String,
         prodotto: Number,
         ricavo: Number,
+        timestamp: String
 
     })
 );
