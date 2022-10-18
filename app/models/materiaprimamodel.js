@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const materiaprimaModel = mongoose.model(
+const materiaPrimaModel = mongoose.model(
     "Materials",
     new mongoose.Schema({
 
@@ -14,9 +14,8 @@ const materiaprimaModel = mongoose.model(
         costo: Number,
         quantita: Number,
         grandezza: Number,
-
-
+        qualità: Number //id livello qualità
     })
 );
 
-module.exports = materiaprimaModel;
+module.exports = materiaPrimaModel;

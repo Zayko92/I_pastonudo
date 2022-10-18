@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Ricetta = require("./ricetta");
 
 const drinkModel = mongoose.model(
     "Drink",
@@ -12,9 +13,7 @@ const drinkModel = mongoose.model(
         descrizione: String,
         costo: Number,
         prezzo: Number,
-        materiePrime: Array,
-        quantaMateria: Array,
-
+        ricetta: Ricetta
     })
 );
 
