@@ -1,6 +1,7 @@
 let materiaprimamodel = require('../models/materiaprimamodel.js')
 let buymodel = require('../models/buymodel.js')
 let drinkmodel = require('../models/drinkmodel.js')
+let ricetta = require('../models/ricetta.js')
 
 //query per aggiornare archivio materie prime
 async function addNewMaterial(idType, update, options = { new: true, upsert: true }) {
@@ -28,4 +29,8 @@ async function addDrink(id, update, options = { new: true, upsert: true }) {
     return drinkmodel.findOneAndUpdate({id}, update, options)
 }
 
-module.exports = {addNewMaterial, countMaterials, getBuys, addBuy, addDrink, getMaterials}
+async function addNewRicetta(idType, update, options = { new: true, upsert: true }) {
+    return ricetta.findOneAndUpdate({idType}, update, options)
+}
+
+module.exports = {addNewMaterial, countMaterials, getBuys, addBuy, addDrink, getMaterials, addNewRicetta}

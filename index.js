@@ -26,7 +26,7 @@ app.use(cors(corsOptions));
 //cookies
 app.use(
     cookieSession({
-        name: "chainfornoobs-session",
+        name: "pastonudo-session",
         secret: "COOKIE_SECRET",
         httpOnly: true,
     })
@@ -35,7 +35,7 @@ app.use(
 
 //richiesta di index
 app.get("/", (req, res) => {
-    res.json({ message: "Chain For Noobs Login versione 0.1" });
+    res.json({ message: "Benvenuto in PastoNudo™" });
 });
 
 // apertura del listener
@@ -71,6 +71,7 @@ app.listen(PORT, () => {
         userModel.estimatedDocumentCount((err, count) => {
             if (!err && count === 0) {
                 new userModel({
+                    id: 1,
                     username: "admin",
                     email: "admin@chainfornoobs.it",
                     password: "admin"

@@ -13,7 +13,9 @@ const drinkModel = mongoose.model(
         descrizione: String,
         costo: Number,
         prezzo: Number,
-        ricetta: Ricetta
+        ricetta: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Ricetta"}
     })
 );
 

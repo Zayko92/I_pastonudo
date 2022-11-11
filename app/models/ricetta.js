@@ -10,7 +10,10 @@ const ricetta = mongoose.model(
             index: true,
             unique: true},
         quantita: [{
-            materiaPrima: materiaPrimaModel,
+            materiaPrima: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "MateriaPrimaModel"
+            },
             quantita: String //frazione di Oz
         }],
         modilitaPreparazione: Number //strainer, shaker, etc.

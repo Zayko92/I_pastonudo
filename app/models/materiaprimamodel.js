@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const materiaPrimaModel = mongoose.model(
-    "Materials",
+    "MateriaPrimaModel",
     new mongoose.Schema({
 
         idType: {type: Number,
