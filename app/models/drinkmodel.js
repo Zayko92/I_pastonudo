@@ -10,12 +10,16 @@ const drinkModel = mongoose.model(
             index: true,
             unique: true},
 
-        descrizione: String,
+        nome: String,
         costo: Number,
         prezzo: Number,
-        ricetta: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Ricetta"}
+        ricetta: [{
+            materiaPrima: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "MateriaPrimaModel"
+            },
+            quantita: String //frazione di Oz
+        }],
     })
 );
 
