@@ -1,18 +1,16 @@
 const mongoose = require("mongoose");
+const drinkModel = require("./drinkmodel");
 
 const saleModel = mongoose.model(
     "Sale",
     new mongoose.Schema({
-
-        id: {type: Number,
-            required: true,
-            index: true,
-            unique: true},
         operatore: String,
-        prodotto: Number,
+        drink: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: drinkModel
+        },
         ricavo: Number,
         timestamp: String
-
     })
 );
 
