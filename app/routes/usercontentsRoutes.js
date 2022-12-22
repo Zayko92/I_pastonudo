@@ -14,7 +14,7 @@ module.exports = function(app) {
     app.use(express.json());
     app.use(
         cookieSession({
-            name: "chainfornoobs-session",
+            name: "pastonudo-session",
             secret: "COOKIE_SECRET",
             httpOnly: true,
         })
